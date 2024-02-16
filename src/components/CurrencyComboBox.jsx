@@ -15,7 +15,7 @@ const CurrencyComboBox = ({ currencies, onSelectCurrency, label }) => {
       <label>{label}</label>
       <div
         onClick={() => listar(!listado)}
-        className="insert-exchange__form-group-select"
+        className="insert-exchange__select"
       >
         {seleccionado ? (
           <>

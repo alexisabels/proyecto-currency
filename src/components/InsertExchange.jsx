@@ -18,7 +18,6 @@ const InsertExchange = ({ añadirEx, currencies }) => {
       amount: parseFloat(amount),
     };
     añadirEx(nuevoEx);
- 
     setAmount("");    //resetear la cantidad
   };
 //---FORMULARIO---
