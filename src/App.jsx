@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import InsertExchange from "../Components/InsertExchange";
-import ExchangeCard from "../Components/ExchangeCard";
-import "../Components/App.css";
-import logo from "../img/logo.svg";
+import InsertExchange from "./Components/InsertExchange";
+import ExchangeCard from "./Components/ExchangeCard";
+import "./App.css";
+import logo from "./img/logo.svg";
 
 const currencies = {
   USD: {
@@ -128,7 +128,7 @@ const App = () => {
       <header>
         <img src={logo} alt="" />
         <div className="currency-exchanger__head">
-          <h1>Currency Exchange App</h1>
+          <h1>Currency Exchanger</h1>
           <InsertExchange
             añadirEx={handleAddExchange} //para insertar un exchange
             currencies={currencies}
@@ -141,7 +141,7 @@ const App = () => {
             <ExchangeCard
               key={exchange.id}
               exchange={exchange} //pasa los exchanges
-              onDelete={() => handleDeleteExchange(exchange.id)} //para borrar un exchange
+              borrarExchange={() => handleDeleteExchange(exchange.id)} //para borrar un exchange
               currencies={currencies} // pasa las currencies
             />
           ))}

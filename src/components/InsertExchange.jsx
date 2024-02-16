@@ -25,8 +25,8 @@ const InsertExchange = ({ añadirEx, currencies }) => {
   };
 // hace el formulario de inserción de intercambio
   return (
-    <div className="insert-exchange">
-      <div className="insert-exchange__form-group-input">
+    <div className="insertexchange">
+      <div className="insertexchange__form-input">
         <label> Amount:</label>
         <input
           type="number"
@@ -34,7 +34,7 @@ const InsertExchange = ({ añadirEx, currencies }) => {
           onChange={(e) => setAmount(e.target.value)}
         />
       </div>
-      <div className="insert-exchange__form-group">
+      <div className="insertexchange__form">
         <label>Origin Currency:</label>
         <CurrencyComboBox
           currencies={currencies}
@@ -43,7 +43,7 @@ const InsertExchange = ({ añadirEx, currencies }) => {
         />
       </div>
       <img src={flecha} alt="" />
-      <div className="insert-exchange__form-group">
+      <div className="insertexchange__form">
         <label>Destination Currency:</label>
         <CurrencyComboBox
           currencies={currencies}
