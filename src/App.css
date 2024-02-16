@@ -1,5 +1,7 @@
 .App {
-  width: 90%;
+  width:80%;
+  background-color: #fffee1;
+
   margin: 0 auto;
 }
 body{
@@ -8,14 +10,40 @@ body{
 header {
   display: flex;
 }
-.currency-exchanger__head {
-  
+
+.currency-exchanger {
   width: 100%;
 }
 
-.insertexchange{
+.currency-exchanger__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exchange-card {
+  position: relative;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: #cedc99;
+  border-radius: 20px;
+width: 48%;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+.exchange-card__pais {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.exchange-card__pais img{
+  width: 50px;
+}
+/*css DE LA PARTE DE INSERTAR*/
+.insertexchange{
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 25px;
 }
 .insertexchange img {
@@ -26,7 +54,7 @@ header {
 }
 .insertexchange__form-input input {
   display: block;
-  width: 50%;
+  width: 40%;
   padding: 10px 15px;
   border-radius: 9px;
   border-color: orange;
@@ -50,29 +78,5 @@ header {
   border: none;
   color: white;
   font-size: 25px
-}
-.currency-exchanger__exchange-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.exchange-card {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #cedc99;
-  border-radius: 20px;
-  width: 10000px;
-  padding: 15px 0;
-  margin-bottom: 20px;
-}
-.exchange-card__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.exchange-card__item img{
-  width: 50px;
 }
 

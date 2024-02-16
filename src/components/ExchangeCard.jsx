@@ -7,27 +7,27 @@ const ExchangeCard = ({ exchange, borrarExchange, currencies }) => {
   const [resultado, setResultado] = useState("");
 
   useEffect(() => {
-   
-      //cálculo
+      //CONVERSION
       const exchangeRate =
         currencies[destCurrency].exchangeRate / currencies[originCurrency].exchangeRate;
       
       const resultado = amount * exchangeRate;
-      setResultado(resultado);
+      //para poner el resultado y ponerlo con 2 decimas (no se si hay otra forma)
+      setResultado(Math.round(resultado * 100) / 100); 
     
   }, [originCurrency, destCurrency, amount, currencies]);
 
-  // Renderizamos el JSX de la tarjeta
+/*CARD DEL EXCHANGE */
   return (
     <div className="exchange-card">
-      <div className="exchange-card__item">
+      <div className="exchange-card__pais">
         <img src={`/flags/${currencies[originCurrency].flag}`} alt="" />
         <p>{amount} {originCurrency}</p>
       </div>
       <div>
         <img src={flechas} alt="" />
       </div>
-      <div className="exchange-card__item">
+      <div className="exchange-card__pais">
         <img src={`/flags/${currencies[destCurrency].flag}`} alt="" />
         <p>{resultado} {destCurrency}</p>
       </div>

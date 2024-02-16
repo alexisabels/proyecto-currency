@@ -3,27 +3,25 @@ import CurrencyComboBox from "./CurrencyComboBox";
 import flecha from "../img/Vector.svg";
 
 const InsertExchange = ({ añadirEx, currencies }) => {
-  //almacenar la moneda de origen, moneda de destino y la cantidad
   const [originCurrency, setOriginCurrency] = useState(
-    Object.keys(currencies)[0]
+    Object.keys(currencies)[0] //guardar divisa de origen
   );
-  const [amount, setAmount] = useState("");
-  const [destCurrency, setDestinationCurrency] = useState(Object.keys(currencies)[1]);
+  const [amount, setAmount] = useState(""); //guardar cantidad
+  const [destCurrency, setDestinationCurrency] = useState(Object.keys(currencies)[1]);  //guardar divisa destino
 
-    const handleAddExchange = () => {
-
+  //FUNCIÓN DE AÑADIR
+    const addExchange = () => {
     const nuevoEx = {
-      id: Math.floor(Math.random() * 999),
+      id: Math.floor(Math.random() * 999), //para el id aleatorio
       originCurrency,
       destCurrency,
       amount: parseFloat(amount),
     };
-    //llamamos a la funcion desde el componente padre para añadirle la nueva 
     añadirEx(nuevoEx);
-    //Reincia el estado de la cantidad
-    setAmount("");
+ 
+    setAmount("");    //resetear la cantidad
   };
-// hace el formulario de inserción de intercambio
+//---FORMULARIO---
   return (
     <div className="insertexchange">
       <div className="insertexchange__form-input">
@@ -35,10 +33,10 @@ const InsertExchange = ({ añadirEx, currencies }) => {
         />
       </div>
       <div className="insertexchange__form">
-        <label>Origin Currency:</label>
+        <label>Origin Currency:</label> 
         <CurrencyComboBox
           currencies={currencies}
-          onSelectCurrency={(currency) => setOriginCurrency(currency)}
+          onSelectCurrency={(currency) => setOriginCurrency(currency)} 
           value={originCurrency}
         />
       </div>
@@ -51,7 +49,7 @@ const InsertExchange = ({ añadirEx, currencies }) => {
           value={destCurrency}
         />
       </div>
-      <button onClick={handleAddExchange}>Add</button>
+      <button onClick={addExchange}>Add</button>
     </div>
   );
 };

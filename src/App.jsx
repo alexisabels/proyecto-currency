@@ -95,7 +95,6 @@ const currencies = {
     name: "Mexican Peso",
     flag: "mx.png",
   },
-  // Puedes agregar más códigos de moneda, emojis de banderas, nombres de moneda y nombres de archivos de banderas según tus necesidades
 };
 
 const initialExchanges = [
@@ -112,13 +111,13 @@ const App = () => {
   const [exchanges, setExchanges] = useState(initialExchanges);
 
 
-  const handleAddExchange = (nuevoExchange) => { //para el exchange
+  const addExchange = (nuevoExchange) => { //para el exchange
     setExchanges([...exchanges, nuevoExchange]);
   };
 
 
 //para cuando queramos eliminar un exhange
-  const handleDeleteExchange = (id) => {
+  const deleteExchange = (id) => {
     const updatedExchanges = exchanges.filter((exchange) => exchange.id !== id);
     setExchanges(updatedExchanges);
   };
@@ -127,21 +126,21 @@ const App = () => {
     <div className="App">
       <header>
         <img src={logo} alt="" />
-        <div className="currency-exchanger__head">
+        <div className="currency-exchanger">
           <h1>Currency Exchanger</h1>
           <InsertExchange
-            añadirEx={handleAddExchange} //para insertar un exchange
+            añadirEx={addExchange} //para insertar un exchange
             currencies={currencies}
           />
         </div>
       </header>
       <div className="currency-exchanger__exchanges">
-        <div className="currency-exchanger__exchange-list">
+        <div className="currency-exchanger__card">
           {exchanges.map((exchange) => (
             <ExchangeCard
               key={exchange.id}
               exchange={exchange} //pasa los exchanges
-              borrarExchange={() => handleDeleteExchange(exchange.id)} //para borrar un exchange
+              borrarExchange={() => deleteExchange(exchange.id)} //para borrar un exchange
               currencies={currencies} // pasa las currencies
             />
           ))}
