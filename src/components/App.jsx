@@ -111,16 +111,18 @@ const initialExchanges = [
 const App = () => {
   const [exchanges, setExchanges] = useState(initialExchanges);
 
-  // Función para manejar el intercambio
-  const handleAddExchange = (newExchange) => {
-    setExchanges([...exchanges, newExchange]);
+
+  const handleAddExchange = (nuevoExchange) => { //para el exchange
+    setExchanges([...exchanges, nuevoExchange]);
   };
-  // Función para manejar la eliminación del intercambio
+
+
+//para cuando queramos eliminar un exhange
   const handleDeleteExchange = (id) => {
     const updatedExchanges = exchanges.filter((exchange) => exchange.id !== id);
     setExchanges(updatedExchanges);
   };
-  //renderiza el componente principal ("App")
+
   return (
     <div className="App">
       <header>
@@ -128,7 +130,7 @@ const App = () => {
         <div className="currency-exchanger__head">
           <h1>Currency Exchange App</h1>
           <InsertExchange
-            onAddExchange={handleAddExchange}
+            añadirEx={handleAddExchange} //para insertar un exchange
             currencies={currencies}
           />
         </div>
@@ -138,9 +140,9 @@ const App = () => {
           {exchanges.map((exchange) => (
             <ExchangeCard
               key={exchange.id}
-              exchange={exchange}
-              onDelete={() => handleDeleteExchange(exchange.id)}
-              currencies={currencies} // Pasa las monedas al componente ExchangeCard
+              exchange={exchange} //pasa los exchanges
+              onDelete={() => handleDeleteExchange(exchange.id)} //para borrar un exchange
+              currencies={currencies} // pasa las currencies
             />
           ))}
         </div>

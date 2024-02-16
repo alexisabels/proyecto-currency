@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import CurrencyComboBox from "./CurrencyComboBox";
 import flecha from "../img/Vector.svg";
 
-const InsertExchange = ({ onAddExchange, currencies }) => {
+const InsertExchange = ({ añadirEx, currencies }) => {
   //almacenar la moneda de origen, moneda de destino y la cantidad
   const [originCurrency, setOriginCurrency] = useState(
     Object.keys(currencies)[0]
   );
   const [amount, setAmount] = useState("");
-  const [destCurrency, setDestCurrency] = useState(Object.keys(currencies)[1]);
+  const [destCurrency, setDestinationCurrency] = useState(Object.keys(currencies)[1]);
 
     const handleAddExchange = () => {
 
@@ -19,7 +19,7 @@ const InsertExchange = ({ onAddExchange, currencies }) => {
       amount: parseFloat(amount),
     };
     //llamamos a la funcion desde el componente padre para añadirle la nueva 
-    onAddExchange(nuevoEx);
+    añadirEx(nuevoEx);
     //Reincia el estado de la cantidad
     setAmount("");
   };
@@ -47,7 +47,7 @@ const InsertExchange = ({ onAddExchange, currencies }) => {
         <label>Destination Currency:</label>
         <CurrencyComboBox
           currencies={currencies}
-          onSelectCurrency={(currency) => setDestCurrency(currency)}
+          onSelectCurrency={(currency) => setDestinationCurrency(currency)}
           value={destCurrency}
         />
       </div>

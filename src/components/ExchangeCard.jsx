@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from "react";
 import flechas from "../img/flechas.png";
-import removeExchange from "../img/remove.svg";
+import imgBorrar from "../img/remove.svg";
 
-const ExchangeCard = ({ exchange, onDelete, currencies }) => {
+const ExchangeCard = ({ exchange, borrarExchange, currencies }) => {
   const { originCurrency, destCurrency, amount } = exchange;
-  const [convertedAmount, setConvertedAmount] = useState("");
+  const [resultado, setResultado] = useState("");
 
   useEffect(() => {
-    //comprueba que las monedas existan en el objeto 'currencies'
-    if (
-      originCurrency &&
-      destCurrency &&
-      currencies[originCurrency] &&
-      currencies[destCurrency]
-    ) {
-      //calcula el cambio
+   
+      //cálculo
       const exchangeRate =
         currencies[destCurrency].exchangeRate / currencies[originCurrency].exchangeRate;
-      // Calcula la cantidad convertida y redondea a 2 decimales
-      const converted = amount * exchangeRate;
-      // Actualiza el estado con la cantidad convertida
-      setConvertedAmount(converted);
-    }
+      
+      const resultado = amount * exchangeRate;
+      setResultado(resultado);
+    
   }, [originCurrency, destCurrency, amount, currencies]);
 
   // Renderizamos el JSX de la tarjeta
@@ -36,9 +29,9 @@ const ExchangeCard = ({ exchange, onDelete, currencies }) => {
       </div>
       <div className="exchange-card__item">
         <img src={`/flags/${currencies[destCurrency].flag}`} alt="" />
-        <p>{convertedAmount} {destCurrency}</p>
+        <p>{resultado} {destCurrency}</p>
       </div>
-      <img src={removeExchange} alt="removeExchange" onClick={onDelete} />
+      <img src={imgBorrar} alt="" onClick={borrarExchange} />
     </div>
   );
 };
