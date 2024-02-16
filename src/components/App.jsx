@@ -103,14 +103,9 @@ const initialExchanges = [
     id: 1001,
     originCurrency: "EUR",
     destCurrency: "USD",
-    amount: 2,
+    amount: 12,
   },
-  {
-    id: 1002,
-    originCurrency: "USD",
-    destCurrency: "JPY",
-    amount: 2,
-  },
+  
 ];
 
 const App = () => {
@@ -130,7 +125,7 @@ const App = () => {
     <div className="App">
       <header>
         <img src={logo} alt="" />
-        <div className="currency-exchanger__header">
+        <div className="currency-exchanger__head">
           <h1>Currency Exchange App</h1>
           <InsertExchange
             onAddExchange={handleAddExchange}

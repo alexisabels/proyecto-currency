@@ -1,41 +1,41 @@
 import React, { useState } from "react";
 
 const CurrencyComboBox = ({ currencies, onSelectCurrency, label }) => {
-  const [selectedCurrency, setSelectedCurrency] = useState(null);
-  const [showOptions, setShowOptions] = useState(false);
+  const [seleccionado, setSelectedCurrency] = useState(null);
+  const [listado, listar] = useState(false);
 
   const handleCurrencyClick = (currency) => {
     setSelectedCurrency(currency);
     onSelectCurrency(currency);
-    setShowOptions(false);
+    listar(false);
   };
 
   return (
     <div>
       <label>{label}</label>
       <div
-        onClick={() => setShowOptions(!showOptions)}
+        onClick={() => listar(!listado)}
         className="insert-exchange__form-group-select"
       >
-        {selectedCurrency ? (
+        {seleccionado ? (
           <>
             <img
-              src={`/flags/${currencies[selectedCurrency].flag}`}
-              alt={selectedCurrency}
+              src={`/flags/${currencies[seleccionado].flag}`}
+              alt={seleccionado}
               style={{
                 marginRight: "5px",
                 marginTop: "0",
                 width: "25px",
               }}
             />
-            {currencies[selectedCurrency].name}
+            {currencies[seleccionado].name}
           </>
         ) : (
-          "Select a Currency"
+          "Select a currency"
         )}
       </div>
 
-      {showOptions && (
+      {listado && (
         <div
           style={{
             border: "1px solid #ccc",
@@ -58,7 +58,7 @@ const CurrencyComboBox = ({ currencies, onSelectCurrency, label }) => {
               <img
                 src={`/flags/${currencies[currencyCode].flag}`}
                 alt={currencyCode}
-                style={{ marginRight: "5px", width: "25px", height: "18px" }}
+                style={{width: "30px", height: "20px" }}
               />
               {currencies[currencyCode].name}
             </div>

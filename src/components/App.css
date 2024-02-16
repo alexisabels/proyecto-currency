@@ -3,12 +3,12 @@
   margin: 0 auto;
 }
 body{
-  background-color: #fffee1;
+  background-color: #fdfbd2;
 } 
 header {
   display: flex;
 }
-.currency-exchanger__header {
+.currency-exchanger__head {
   width: 100%;
 }
 
@@ -27,7 +27,7 @@ header {
   display: block;
   width: 50%;
   padding: 10px 15px;
-  border-radius: 16px;
+  border-radius: 9px;
   border-color: orange;
   border-width: 2px;
   border-style: solid;
@@ -36,16 +36,16 @@ header {
   display: block;
   width: 100%;
   padding: 10px 15px;
-  border-radius: 16px;
+  border-radius: 9px;
   border-color: orange;
   background-color: white;
   border-width: 2px;
   border-style: solid;
 }
 .insert-exchange button{
-  background-color: #d27c2c;
+  background-color: orange;
   padding: 10px 35px;
-  border-radius: 16px;
+  border-radius: 9px;
   border: none;
   color: white;
   font-size: 20px
@@ -60,10 +60,10 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #d3e19d;
-  border-radius: 16px;
-  width: calc(50% - 10px);
-  padding: 30px 0;
+  background-color: #cedc99;
+  border-radius: 20px;
+  width: 10000px;
+  padding: 15px 0;
   margin-bottom: 20px;
 }
 .exchange-card__item {

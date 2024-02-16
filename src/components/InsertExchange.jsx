@@ -12,14 +12,14 @@ const InsertExchange = ({ onAddExchange, currencies }) => {
 
     const handleAddExchange = () => {
 
-    const newExchange = {
-      id: Math.floor(Math.random() * 10000),
+    const nuevoEx = {
+      id: Math.floor(Math.random() * 999),
       originCurrency,
       destCurrency,
       amount: parseFloat(amount),
     };
     //llamamos a la funcion desde el componente padre para añadirle la nueva 
-    onAddExchange(newExchange);
+    onAddExchange(nuevoEx);
     //Reincia el estado de la cantidad
     setAmount("");
   };
