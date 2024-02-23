@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import InsertExchange from "./Components/InsertExchange";
-import ExchangeCard from "./Components/ExchangeCard";
+import InsertExchange from "./components/InsertExchange";
+import ExchangeCard from "./components/ExchangeCard";
 import "./App.css";
 import logo from "./img/logo.svg";
 
